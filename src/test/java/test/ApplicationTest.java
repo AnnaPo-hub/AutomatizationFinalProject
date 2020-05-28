@@ -11,6 +11,8 @@ import sqlUtils.SqlUtils;
 import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -50,11 +52,11 @@ public class ApplicationTest {
     public void shouldCheckIfNotSuccessWithInvalidCardInformationPaymentByDebitCard() throws SQLException {
         val TripProposalPage = new TripProposalPage();
         val debitCardPaymentForm = TripProposalPage.selectBuyByDebitCard();
-        val validCardInformation = DataHelper.getInvalidCardInformation();
-        debitCardPaymentForm.fillCardInformation(validCardInformation);
+        val invalidCardInformation = DataHelper.getInvalidCardInformation();
+        debitCardPaymentForm.fillCardInformation(invalidCardInformation);
 //        debitCardPaymentForm.checkIfPaymentNotSuccessful();  баг, показывает в веб-приложении успех
         final String statusForPaymentByDebitCard = SqlUtils.getStatusForPaymentByDebitCard();
-        assertEquals("DECLINED", statusForPaymentByDebitCard);
+        assertThat(statusForPaymentByDebitCard, equalTo("DECLINED"));
     }
 
     @Test//4 UI
@@ -65,7 +67,7 @@ public class ApplicationTest {
         creditCardPaymentForm.fillCardInformation(validCardInformation);
 //        creditCardPaymentForm.checkIfPaymentNotSuccessful();  баг, показывает в вебе успех
         final String statusForPaymentByCreditCard = SqlUtils.getStatusForPaymentByCreditCard();
-        assertEquals("DECLINED", statusForPaymentByCreditCard);
+        assertThat(statusForPaymentByCreditCard, equalTo("DECLINED"));
     }
 
     @Test//5 UI неправильный номер карты
@@ -128,7 +130,7 @@ public class ApplicationTest {
         creditCardPaymentForm2.checkIfWrongFormatOfField();
     }
 
-    @Test//10 UI неправильное имя (цифры вместо букв), должен падать
+    @Test//10 UI неправильное имя (цифры вместо букв)
     public void shouldCheckIfNotSuccessWithWrongName() {
         val TripProposalPage = new TripProposalPage();
         val creditCardPaymentForm = TripProposalPage.selectBuyByCreditCard();

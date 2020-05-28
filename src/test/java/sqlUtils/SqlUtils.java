@@ -55,10 +55,21 @@ public class SqlUtils {
     }
 
     public static String getStatusForPaymentByCreditCard() throws SQLException {
-        String statusSQL = "SELECT status FROM credit_request_entity order by created desc limit 1; ";
+        String id  = null;
+        val idSQL = "SELECT payment_id FROM order_entity order by created desc limit 1;";
+        try (val conn = getConnection();
+             val statusStmt = conn.prepareStatement(idSQL);) {
+            try (val rs = statusStmt.executeQuery()) {
+                if (rs.next()) {
+                    id = rs.getString("payment_id");
+                }
+            }
+        }
+        String statusSQL = "SELECT status FROM credit_request_entity WHERE bank_id =?; ";
         String status = null;
         try (val conn = getConnection();
              val statusStmt = conn.prepareStatement(statusSQL);) {
+            statusStmt.setString(1, id);
             try (val rs = statusStmt.executeQuery()) {
                 if (rs.next()) {
                     status = rs.getString("status");
