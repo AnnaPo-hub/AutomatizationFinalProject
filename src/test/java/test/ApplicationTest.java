@@ -153,16 +153,30 @@ public class ApplicationTest {
     }
 
     @Test
-    public void double1() {
+    public void shouldCheckStatusViaAPIByDebitCardWithValidData() {
         val validCardInformation = DataHelper.getValidCardInformation();
-        final String response = RestApiHelper.fillPaymentForm(validCardInformation);
+        final String response = RestApiHelper.fillPaymentFormByDebitCard(validCardInformation);
         assertTrue(response.contains("APPROVED"));
     }
 
     @Test
-    public void double2() {
+    public void shouldCheckStatusViaAPIByDebitCardWithInvalidData() {
         val invalidCardInformation = DataHelper.getInvalidCardInformation();
-        final String response = RestApiHelper.fillPaymentForm(invalidCardInformation);
+        final String response = RestApiHelper.fillPaymentFormByDebitCard(invalidCardInformation);
+        assertTrue(response.contains("DECLINED"));
+    }
+
+    @Test
+    public void shouldCheckStatusViaAPIByCreditCardWithValidData() {
+        val validCardInformation = DataHelper.getValidCardInformation();
+        final String response = RestApiHelper.fillPaymentFormByCreditCard(validCardInformation);
+        assertTrue(response.contains("APPROVED"));
+    }
+
+    @Test
+    public void shouldCheckStatusViaAPIByCreditCardWithInvalidData() {
+        val invalidCardInformation = DataHelper.getInvalidCardInformation();
+        final String response = RestApiHelper.fillPaymentFormByCreditCard(invalidCardInformation);
         assertTrue(response.contains("DECLINED"));
     }
 }

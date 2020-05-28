@@ -17,12 +17,25 @@ public class RestApiHelper {
             .log(LogDetail.ALL)
             .build();
 
-    public static String fillPaymentForm(DataHelper.CardInformation cardInformation) {
+    public static String fillPaymentFormByDebitCard(DataHelper.CardInformation cardInformation) {
         String response = given() // -P:profile=test
                 .spec(requestSpec)
                 .body(cardInformation)
                 .when()
                 .post("/api/v1/pay")
+                .then().log().all()
+                .statusCode(200)
+                .extract()
+                .asString();
+        return response;
+    }
+
+    public static String fillPaymentFormByCreditCard(DataHelper.CardInformation cardInformation) {
+        String response = given() // -P:profile=test
+                .spec(requestSpec)
+                .body(cardInformation)
+                .when()
+                .post("/api/v1/credit")
                 .then().log().all()
                 .statusCode(200)
                 .extract()
