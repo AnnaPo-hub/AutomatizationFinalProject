@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.ApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-28T08:23:50" hostname="Annas-MacBook-Pro.local" time="6.919">
+  <properties/>
+  <testcase name="shouldCheckIfSuccessWithValidCardInformationPaymentByCreditCard()" classname="test.ApplicationTest" time="6.919"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[May 28, 2020 11:23:50 AM com.codeborne.selenide.drivercommands.LazyDriver getAndCheckWebDriver
+INFO: No webdriver is bound to current thread: 13 - let's create a new webdriver
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 9057
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+May 28, 2020 11:23:52 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+May 28, 2020 11:23:52 AM com.codeborne.selenide.webdriver.BrowserResizer adjustBrowserSize
+INFO: Set browser size to 1366x768
+May 28, 2020 11:23:52 AM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=83.0.4103.61 Platform=MAC
+May 28, 2020 11:23:52 AM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 5.3.1
+May 28, 2020 11:23:52 AM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+May 28, 2020 11:23:52 AM com.codeborne.selenide.drivercommands.CreateDriverCommand createDriver
+INFO: Create webdriver in current thread 13: ChromeDriver -> ChromeDriver: chrome on MAC (37323c713dadb8d04ad904ba949e2656)
+]]></system-err>
+</testsuite>
