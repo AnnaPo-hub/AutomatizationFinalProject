@@ -54,18 +54,18 @@ public class ApplicationTest {
         val debitCardPaymentForm = TripProposalPage.selectBuyByDebitCard();
         val invalidCardInformation = DataHelper.getInvalidCardInformation();
         debitCardPaymentForm.fillCardInformation(invalidCardInformation);
-//        debitCardPaymentForm.checkIfPaymentNotSuccessful();  баг, показывает в веб-приложении успех
+        debitCardPaymentForm.checkIfPaymentNotSuccessful();  //баг, показывает в веб-приложении успех
         final String statusForPaymentByDebitCard = SqlUtils.getStatusForPaymentByDebitCard();
         assertThat(statusForPaymentByDebitCard, equalTo("DECLINED"));
     }
 
-    @Test//4 UI
+    @Test//4 UI должен падать
     public void shouldCheckIfNotSuccessWithInvalidCardInformationPaymentByCreditCard() throws SQLException {
         val TripProposalPage = new TripProposalPage();
         val creditCardPaymentForm = TripProposalPage.selectBuyByCreditCard();
         val validCardInformation = DataHelper.getInvalidCardInformation();
         creditCardPaymentForm.fillCardInformation(validCardInformation);
-//        creditCardPaymentForm.checkIfPaymentNotSuccessful();  баг, показывает в вебе успех
+        creditCardPaymentForm.checkIfPaymentNotSuccessful(); // баг, показывает в вебе успех
         final String statusForPaymentByCreditCard = SqlUtils.getStatusForPaymentByCreditCard();
         assertThat(statusForPaymentByCreditCard, equalTo("DECLINED"));
     }
