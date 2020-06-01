@@ -9,13 +9,13 @@ public class TripProposalPage {
     private SelenideElement buttonBuyByDebit = $(byText("Купить"));
     private SelenideElement buttonBuyCredit = $(byText("Купить в кредит"));
 
-    public DebitCardPaymentForm selectBuyByDebitCard() {
+    public FillingInCardData selectBuyByDebitCard() {
         buttonBuyByDebit.click();
-        return new DebitCardPaymentForm();
+        return new FillingInCardData();
     }
 
-    public CreditCardPaymentForm selectBuyByCreditCard() {
+    public FillingInCardData selectBuyByCreditCard() {
         buttonBuyCredit.click();
-        return new CreditCardPaymentForm();
+        return new FillingInCardData();
     }
 }

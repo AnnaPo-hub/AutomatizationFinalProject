@@ -5,7 +5,6 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./init_db:/docker-entrypoint-initdb.d
       - ./data_mysql:/var/lib/mysql
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
@@ -13,8 +12,15 @@ services:
       - MYSQL_USER=app
       - MYSQL_PASSWORD=pass
 
-  openjdk:
-    build: .
-    image: openjdk:8-slim
+  postgres:
+    image: postgres:12.0-alpine
+    environment:
+    - POSTGRES_USER=app
+    - POSTGRES_PASSWORD=pass
+
     ports:
-      - '9999:9999'
+    - '5432:5432'
+
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
