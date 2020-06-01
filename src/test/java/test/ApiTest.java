@@ -12,8 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ApiTest {
     @BeforeEach
     void setUp() {
-        open("http://localhost:8080");
-    }
+        open("http://localhost:8080"); }
 
     @Test
     public void shouldCheckStatusViaAPIByDebitCardWithValidData() {

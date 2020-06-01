@@ -12,6 +12,7 @@
 1. Запустить приложение командой :
     * `java -jar ./artifacts/aqa-shop.jar -Djdbc:postgresql://localhost:5432/postgres ` для использования базы данных Postgres.
     * `java -jar ./artifacts/aqa-shop.jar -Djdbc:mysql://localhost:3306/app ` для использования базы данных MySQL. 
+    
    Приложение запускается на порту 8080; 
 1. Находясь в каталоге gate-simulator, запустить симулятор банковского сервиса командой `npm start`, симулятор запускается на порту 9999; 
 1. Тесты готовы к запуску.  
