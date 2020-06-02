@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class SqlUtils {
     public static Connection getConnection() throws SQLException {
         final Connection connection = DriverManager.getConnection(
+//                System.getProperty("spring.datasource"));
                 System.getProperty("property_name"));
         return connection;
     }
