@@ -15,6 +15,12 @@
     * для использования MySQL.`java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar`  
     
    Приложение запускается на порту 8080; 
-1. Запускаем тесты командами: 
-    при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=app -Dpassword=pass` 
+  
+1. Запускаем тесты командой: 
+    при работе с postgres: `./gradlew test -Dproperty_name=jdbc:postgresql://localhost:5432/postgres -Dlogin=user -Dpassword=password -Dapp_url=y` 
+    при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=x -Dpassword=y -Dapp_url=y` 
+    (по умолчанию app_url = http://localhost:8080, login = app, password= pass ); 
+    
+
+     
 

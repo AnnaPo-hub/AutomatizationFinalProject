@@ -6,15 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import restApiHelper.RestApiHelper;
 
-import java.io.IOException;
-
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ApiTest {
     @BeforeEach
-    void setUp() throws IOException {
-        open("http://localhost:8080");
+    void setUp() {
+        String appUrl = System.getProperty("app_url");
+        open(appUrl);
     }
 
     @Test

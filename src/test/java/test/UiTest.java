@@ -22,7 +22,8 @@ public class UiTest {
 
     @BeforeEach
     void setUp() {
-        open("http://localhost:8080");
+        String appUrl = System.getProperty("app_url");
+        open(appUrl);
     }
 
     @Test

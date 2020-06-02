@@ -11,8 +11,6 @@ public class SqlUtils {
         String dbUrl = System.getProperty("property_name");
         String login = System.getProperty("login");
         String password = System.getProperty("password");
-//        String login = "app";
-//        String password= "pass";
         final Connection connection = DriverManager.getConnection(
                 dbUrl, login,password);
         return connection;
