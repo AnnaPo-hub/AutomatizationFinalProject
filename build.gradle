@@ -32,7 +32,7 @@ test {
     useJUnitPlatform()
 //     в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
     systemProperty "property_name", System.getProperty("property_name");
-    systemProperty "login", System.getProperty("login", "app");
-    systemProperty "password", System.getProperty("password", "pass");
+    systemProperty "login", System.getProperty("login");
+    systemProperty "password", System.getProperty("password");
     systemProperty "app_url", System.getProperty("app_url", "http://localhost:8080");
 }
