@@ -8,11 +8,15 @@ import java.sql.SQLException;
 
 public class SqlUtils {
     public static Connection getConnection() throws SQLException {
+        final String dbUrl = System.getProperty("property_name");
         final Connection connection = DriverManager.getConnection(
-//                System.getProperty("spring.datasource"));
-                System.getProperty("property_name"));
+                dbUrl);
         return connection;
     }
+
+
+
+
 
     public static String getPaymentId() throws SQLException {
         String payment_id = null;
