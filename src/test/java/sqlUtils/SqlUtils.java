@@ -8,15 +8,15 @@ import java.sql.SQLException;
 
 public class SqlUtils {
     public static Connection getConnection() throws SQLException {
-        final String dbUrl = System.getProperty("property_name");
+        String dbUrl = System.getProperty("property_name");
+        String login = System.getProperty("login");
+        String password = System.getProperty("password");
+//        String login = "app";
+//        String password= "pass";
         final Connection connection = DriverManager.getConnection(
-                dbUrl);
+                dbUrl, login,password);
         return connection;
     }
-
-
-
-
 
     public static String getPaymentId() throws SQLException {
         String payment_id = null;

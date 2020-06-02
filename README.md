@@ -16,4 +16,5 @@
     
    Приложение запускается на порту 8080; 
 1. Запускаем тесты командами: 
-    при риботе с mySql: `./gradlew test --info "-Dselenide.headless=true" -Dspring.datasource.url=jdbc:mysql://localhost:3306/app`
+    при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=app -Dpassword=pass` 
+
