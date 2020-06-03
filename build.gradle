@@ -7,11 +7,11 @@ plugins {
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-allure{
+allure {
     autoconfigure = true
     version = '2.13.3'
 
-    useJUnit5{
+    useJUnit5 {
         version = '2.13.3'
     }
 }
@@ -21,29 +21,27 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+repositories {
+    mavenCentral()
+}
 
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+    testImplementation 'com.codeborne:selenide:5.3.1'
+    testImplementation 'com.github.javafaker:javafaker:1.0.1'
+    testImplementation 'io.rest-assured:rest-assured:4.3.0'
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation 'mysql:mysql-connector-java:8.0.18'
+    testImplementation 'org.hamcrest:hamcrest-library:2.1'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.3'
+}
 
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-
-        testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
-        testImplementation 'com.codeborne:selenide:5.3.1'
-        testImplementation 'com.github.javafaker:javafaker:1.0.1'
-        testImplementation 'io.rest-assured:rest-assured:4.3.0'
-        testImplementation 'com.google.code.gson:gson:2.8.6'
-        testImplementation 'mysql:mysql-connector-java:8.0.18'
-        testImplementation 'org.hamcrest:hamcrest-library:2.1'
-        compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
-    }
-
-    test {
-        useJUnitPlatform()
+test {
+    useJUnitPlatform()
 //     в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
-        systemProperty "property_name", System.getProperty("property_name");
-        systemProperty "login", System.getProperty("login");
-        systemProperty "password", System.getProperty("password");
-        systemProperty "app_url", System.getProperty("app_url", "http://localhost:8080");
-    }
+    systemProperty "property_name", System.getProperty("property_name");
+    systemProperty "login", System.getProperty("login");
+    systemProperty "password", System.getProperty("password");
+    systemProperty "app_url", System.getProperty("app_url", "http://localhost:8080");
+}

@@ -1,7 +1,11 @@
 package test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataHelper;
+import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page.TripProposalPage;
@@ -20,6 +24,10 @@ public class UiTest {
     String wayOfPaymentPay = "pay";
     String wayOfPaymentByCredit = "credit";
 
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide()); }
+
     @BeforeEach
     void setUp() {
         String appUrl = System.getProperty("app_url");
@@ -32,7 +40,7 @@ public class UiTest {
         val fillingInCardData = tripProposalPage.selectBuyByDebitCard();
         val validCardInformation = DataHelper.getValidCardInformation();
 //        fillingInCardData.checkPaymentMethodIsCorrect(wayOfPaymentPay);
-        fillingInCardData.fillCardInformationForSelectedWay(validCardInformation,  wayOfPaymentPay);
+        fillingInCardData.fillCardInformationForSelectedWay(validCardInformation, wayOfPaymentPay);
         fillingInCardData.checkIfPaymentSuccessful();
         val paymentId = SqlUtils.getPaymentId();
         val statusForPaymentByDebitCard = SqlUtils.getStatusForPaymentByDebitCard(paymentId);
@@ -173,4 +181,8 @@ public class UiTest {
         fillingInCardData2.fillCardInformationForSelectedWay(invalidCardInformation, wayOfPaymentPay);
         fillingInCardData2.checkIfWrongFormatOfField();
     }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure"); }
 }

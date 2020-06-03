@@ -19,16 +19,6 @@ public class FillingInCardData {
     private SelenideElement buttonContinue = $("div:nth-child(4) > button > span > span");
     private SelenideElement wrongFormatNotification = $(".input__sub");
 
-//    public void checkPaymentMethodIsCorrect(String wayOfPayment){
-//        if (wayOfPayment.equals("pay")) {
-//            paymentBySelectedWayHeader.shouldHave(Condition.text("Оплата по карте"));
-//        } else if (wayOfPayment.equals("credit")) {
-//            paymentBySelectedWayHeader.shouldHave(Condition.text("Кредит по данным карты"));
-//        } else {
-//            System.out.println("parameter wayOfPayment can be only \"pay\" or \"credit\"");
-//        }
-//    }
-
     public void fillCardInformationForSelectedWay(DataHelper.CardInformation cardInformation, String wayOfPayment) {
         if (wayOfPayment.equals("pay")) {
             paymentBySelectedWayHeader.shouldHave(Condition.text("Оплата по карте"));
