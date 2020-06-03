@@ -24,6 +24,9 @@
     * при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=app -Dpassword=pass -Dapp_url=y` 
     (по умолчанию app_url = http://localhost:8080); 
     
+    
+ Вы можете ознакомиться с   [отчетом по итогам автоматизированного тестирования] (https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/Report.md), а также 
+ с [отчетом по итогам автоматизации](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/Summary.md). 
 
      
 
