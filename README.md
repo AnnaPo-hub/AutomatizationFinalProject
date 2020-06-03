@@ -20,8 +20,8 @@
    Приложение запускается на порту 8080; 
   
 1. Запустите тесты командой: 
-    при работе с postgres: `./gradlew test -Dproperty_name=jdbc:postgresql://localhost:5432/postgres -Dlogin=user -Dpassword=password -Dapp_url=y` 
-    при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=app -Dpassword=pass -Dapp_url=y` 
+    * при работе с postgres: `./gradlew test -Dproperty_name=jdbc:postgresql://localhost:5432/postgres -Dlogin=user -Dpassword=password -Dapp_url=y` 
+    * при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app -Dlogin=app -Dpassword=pass -Dapp_url=y` 
     (по умолчанию app_url = http://localhost:8080); 
     
 
