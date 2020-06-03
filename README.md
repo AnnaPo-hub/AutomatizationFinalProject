@@ -25,7 +25,7 @@
     (по умолчанию app_url = http://localhost:8080); 
     
     
- Вы можете ознакомиться с   [отчетом по итогам автоматизированного тестирования] (https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Report.md), а также 
+ Вы можете ознакомиться с   [отчетом по итогам автоматизированного тестирования](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Report.md), а также 
  с [отчетом по итогам автоматизации](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Summary.md). 
 
      
