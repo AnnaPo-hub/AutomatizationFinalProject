@@ -3,10 +3,11 @@
 
 Было проведено **16 тест-кейсов**: из них 4 по позитивному сценарию и 12 по негативному. 
 
-81.25% тест-кейсов прошли успешно, 18,75% тестов прошли не успешно. 
+**81.25%** тест-кейсов прошли успешно, **18,75%** тестов прошли не успешно. 
 
 Прилагаю ниже AllureReport
-![alt image](screenshort/Screenshot1.png). 
+
+![alt image](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/screenshot/Screenshot1.png?raw=true)
 
 По итогам тестирования **обнаружено 6 багов**, а также предложено одно улучшение. 
 
