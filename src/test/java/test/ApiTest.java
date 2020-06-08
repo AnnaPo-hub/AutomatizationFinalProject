@@ -2,19 +2,12 @@ package test;
 
 import data.DataHelper;
 import lombok.val;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import restApiHelper.RestApiHelper;
 
-import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ApiTest {
-    @BeforeEach
-    void setUp() {
-        String appUrl = System.getProperty("app_url");
-        open(appUrl);
-    }
 
     @Test
     public void shouldCheckStatusViaAPIByDebitCardWithValidData()  {

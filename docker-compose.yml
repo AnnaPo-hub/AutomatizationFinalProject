@@ -24,10 +24,10 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
 
-  node-app:
-    build: .
-    image: node-app:1.0
-    ports:
-      - '9999:9999'
+#  node-app:
+#    build: .
+#    image: node-app:1.0
+#    ports:
+#      - '9999:9999'
 
 

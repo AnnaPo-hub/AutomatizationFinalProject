@@ -11,7 +11,7 @@
      
 ### Необходимое окружение: 
  * установленный  Docker; 
- * убедитесь, что  порты  8080, 9999, 3000 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны; 
+ * убедитесь, что  порты  8080, 9999 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны; 
 
 ### Инструкции по установке 
 1. Скачайте архив;
@@ -26,11 +26,12 @@
    Приложение запускается на порту 8080; 
   
 1. Запустите тесты командой: 
-    * при работе с postgres: `./gradlew test -Dproperty_name=jdbc:postgresql://localhost:5432/postgres 
-    -Dlogin=user -Dpassword=password -Dapp_url=y` 
-    * при работе с mySql: `./gradlew test -Dproperty_name=jdbc:mysql://localhost:3306/app 
-    -Dlogin=app -Dpassword=pass -Dapp_url=y` 
-    (по умолчанию app_url = http://localhost:8080); 
+    * при работе с postgres: `./gradlew test -DdbURL_name=jdbc:postgresql://localhost:5432/postgres 
+    -Dlogin=user -Dpassword=password -Dapp_url=http://localhost:8080` 
+    * при работе с mySql: `./gradlew test -DdbURL_name=jdbc:mysql://localhost:3306/app  -Dlogin=app -Dpassword=pass -Dapp_url=http://localhost:8080` 
+    ( app_url = http://localhost:8080 по умолчанию ).
+    
+
     
     
  
