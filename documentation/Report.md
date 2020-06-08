@@ -6,7 +6,7 @@
 81.25% тест-кейсов прошли успешно, 18,75% тестов прошли не успешно. 
 
 Прилагаю ниже AllureReport
-![Image alt](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/screenshort/Screenshot1.png). 
+![alt image](screenshort/Screenshot1.png). 
 
 По итогам тестирования **обнаружено 6 багов**, а также предложено одно улучшение. 
 
