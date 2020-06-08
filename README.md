@@ -3,9 +3,15 @@
 Программа предназначена для автоматизированного тестирования сервиса по покупке тура с помощью дебетовой карты и с получением кредита
 по данным дебетовой карты. 
 
+### Документация по проекту 
+  * [План по автоматизации тестирования](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Plan.md)
+  * [Отчет по итогам автоматизированного тестирования](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Report.md)
+  * [Отчет по итогам автоматизации](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Summary.md). 
+
+     
 ### Необходимое окружение: 
-установленный Node.js, Docker; 
-убедитесь, что  порты  8080, 9999 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны; 
+ * установленный  Docker; 
+ * убедитесь, что  порты  8080, 9999, 3000 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны; 
 
 ### Инструкции по установке 
 1. Скачайте архив;
@@ -27,8 +33,5 @@
     (по умолчанию app_url = http://localhost:8080); 
     
     
- Вы можете ознакомиться с   [отчетом по итогам автоматизированного тестирования](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Report.md), а также 
- с [отчетом по итогам автоматизации](https://github.com/AnnaPo-hub/AutomatizationFinalProject/blob/master/documentation/Summary.md). 
-
-     
+ 
 
