@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 
 public class RestApiHelper {
-    static String appUrl = System.getProperty("app_url");
+    static String appUrl = System.getProperty("app.url");
     public static RequestSpecification requestSpec = new RequestSpecBuilder()
             .setBaseUri(appUrl)
             .setAccept(ContentType.JSON)
@@ -18,7 +18,7 @@ public class RestApiHelper {
             .build();
 
     public static String fillPaymentFormByDebitCard(DataHelper.CardInformation cardInformation) {
-        String response = given() // -P:profile=test
+        String response = given()
                 .spec(requestSpec)
                 .body(cardInformation)
                 .when()
@@ -31,7 +31,7 @@ public class RestApiHelper {
     }
 
     public static String fillPaymentFormByCreditCard(DataHelper.CardInformation cardInformation) {
-        String response = given() // -P:profile=test
+        String response = given()
                 .spec(requestSpec)
                 .body(cardInformation)
                 .when()

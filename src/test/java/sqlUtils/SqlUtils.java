@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class SqlUtils {
     public static Connection getConnection() throws SQLException {
-        String dbUrl = System.getProperty("dbURL_name");
+        String dbUrl = System.getProperty("db.url");
         String login = System.getProperty("login");
         String password = System.getProperty("password");
         final Connection connection = DriverManager.getConnection(

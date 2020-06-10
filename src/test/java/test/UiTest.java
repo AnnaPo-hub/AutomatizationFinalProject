@@ -20,16 +20,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class UiTest {
-    String wayOfPaymentPay = "pay";
-    String wayOfPaymentByCredit = "credit";
-
     @BeforeAll
     static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide()); }
 
     @BeforeEach
     void setUp() {
-        String appUrl = System.getProperty("app_url");
+        String appUrl = System.getProperty("app.url");
         open(appUrl);
     }
 
@@ -38,7 +35,6 @@ public class UiTest {
         val tripProposalPage = new TripProposalPage();
         val fillingInCardData = tripProposalPage.selectBuyByDebitCard();
         val validCardInformation = DataHelper.getValidCardInformation();
-//        fillingInCardData.checkPaymentMethodIsCorrect(wayOfPaymentPay);
         fillingInCardData.fillCardInformationForSelectedWay(validCardInformation);
         fillingInCardData.checkIfPaymentSuccessful();
         val paymentId = SqlUtils.getPaymentId();
